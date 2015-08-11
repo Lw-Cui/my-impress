@@ -166,21 +166,21 @@
     
     // CHECK SUPPORT
     var body = document.body;
-    
+
     var ua = navigator.userAgent.toLowerCase();
-    var impressSupported = 
-                          // browser should support CSS 3D transtorms 
+    var impressSupported =
+                          // browser should support CSS 3D transtorms
                            ( pfx("perspective") !== null ) &&
-                           
+
                           // and `classList` and `dataset` APIs
                            ( body.classList ) &&
                            ( body.dataset ) &&
-                           
+
                           // but some mobile devices need to be blacklisted,
                           // because their CSS 3D support or hardware is not
                           // good enough to run impress.js properly, sorry...
                            ( ua.search(/(iphone)|(ipod)|(android)/) === -1 );
-    
+
     if (!impressSupported) {
         // we can't be sure that `classList` is supported
         body.className += " impress-not-supported ";
@@ -188,7 +188,8 @@
         body.classList.remove("impress-not-supported");
         body.classList.add("impress-supported");
     }
-    
+
+
     // GLOBALS AND DEFAULTS
     
     // This is where the root elements of all impress.js instances will be kept.
